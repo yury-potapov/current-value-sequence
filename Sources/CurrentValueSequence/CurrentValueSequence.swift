@@ -95,7 +95,7 @@ public actor CurrentValueSequenceSubject<Element: Sendable> {
     }
 
     private func resetForIterator(_ uuid: UUID) {
-        continuations[uuid] = nil
+        continuations.removeValue(forKey: uuid)
     }
 
     private func resumeContinuations(with value: Element) {
